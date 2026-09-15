@@ -1465,6 +1465,40 @@ section {
 }
 
 /* ============================================================
+   Research Page
+   ============================================================ */
+.research-hero {
+  min-height: auto;
+  padding-top: 120px;
+  padding-bottom: var(--space-32);
+}
+
+/* --- 头图：横幅卡片，贴站内卡片质感 --- */
+.research-banner {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.research-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* --- 头图下的暂定一句话 --- */
+.research-motto {
+  margin-top: var(--space-10);
+  text-align: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 44px;
+  letter-spacing: -0.8px;
+  color: var(--text-primary);
+}
+
+/* ============================================================
    Back to Top
    ============================================================ */
 .back-to-top {
@@ -1606,6 +1640,15 @@ section {
     padding-bottom: var(--space-10);
   }
 
+  .research-hero {
+    padding-top: 100px;
+    padding-bottom: var(--space-24);
+  }
+
+  .research-motto {
+    font-size: 34px;
+  }
+
   .blog-section,
   .post-section {
     padding: 0 0 var(--space-24) 0;
@@ -1677,6 +1720,16 @@ section {
   .post-hero {
     padding-top: 90px;
     padding-bottom: var(--space-6);
+  }
+
+  .research-hero {
+    padding-top: 90px;
+    padding-bottom: var(--space-16);
+  }
+
+  .research-motto {
+    font-size: 28px;
+    margin-top: var(--space-8);
   }
 
   .blog-section,
