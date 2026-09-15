@@ -211,13 +211,27 @@ section {
   z-index: 1;
 }
 
+.hero > .container {
+  /* 钉死容器宽度，避免内容换行时整块水平漂移 */
+  width: 100%;
+}
+
 .hero-wrapper {
   display: flex;
   align-items: center;
   gap: var(--space-16);
+  position: relative;
+  /* 固定宽度并居中：内容块不贴容器左缘，也不随打字内容变化漂移 */
+  width: min(100%, 900px);
+  margin: 0 auto;
 }
 
 .hero-avatar-container {
+  /* 绝对定位锚定在文字块垂直中心：文字换行时对称生长，中心不动，头像不动 */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -259,6 +273,8 @@ section {
 
 .hero-text {
   flex: 1;
+  /* 头像绝对定位后，为它预留出左侧空间 */
+  margin-left: calc(200px + var(--space-16));
 }
 
 .hero-greeting {
@@ -1513,8 +1529,24 @@ section {
     visibility: visible;
   }
 
+  /* 上下布局：头像回到正常流，内容从顶部排布，换行不影响头像 */
+  .hero {
+    align-items: flex-start;
+  }
+
+  .hero-avatar-container {
+    position: static;
+    transform: none;
+  }
+
+  .hero-text {
+    margin-left: 0;
+  }
+
   .hero-wrapper {
     flex-direction: column;
+    /* 上下布局时头像仍水平居中 */
+    align-items: center;
     text-align: center;
     gap: var(--space-8);
   }
